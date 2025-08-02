@@ -1,3 +1,4 @@
+# .github/workflows/pytest.yml
 name: Run Pytest on master
 
 on:
@@ -8,12 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
-    services:
-      xvfb:
-        image: selenium/standalone-chrome
-        ports:
-          - 4444:4444
 
     steps:
       - name: Checkout code
@@ -29,6 +24,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest selenium webdriver-manager
 
-      - name: Run tests with pytest
-        run: |
-          pytest -v
+      - name: Run tests
+        run: pytest -v
