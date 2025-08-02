@@ -1,0 +1,4 @@
+# config/config.yaml
+base_url: "https://www.example.com"
+browser: "chrome" # chrome or firefox
+timeout: 30 # Default timeout for elements
